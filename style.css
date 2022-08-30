@@ -272,3 +272,78 @@ main header {
   font-weight: 500;
   gap: 25px;
 }
+
+.content {
+  grid-auto-rows: minmax(min-content, 150px);
+  overflow: scroll;
+  margin: 0 50px 50px;
+  padding: 0 10px;
+  gap: 10px;
+  border: 1px solid hsla(184, 11%, 28%, 0.5);
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+}
+
+.book {
+  padding-bottom: 10px;
+  border-bottom: 1px dotted hsla(184, 11%, 28%, 0.5);
+  gap: 5px;
+}
+
+.book:last-child {
+  border-bottom: none;
+}
+
+.data-list {
+  grid-template-columns: repeat(5, minmax(100px, 1fr));
+  font-weight: 500;
+  color: #2c3639;
+  gap: 25px;
+}
+
+.data-list .title {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.data-list .date {
+  font-style: italic;
+}
+
+.book .options {
+  gap: 10px;
+  justify-content: end;
+}
+
+.book-data {
+  align-items: center;
+}
+
+.options button {
+  padding: 5px 10px;
+  border: none;
+  font-weight: 600;
+  align-items: center;
+  gap: 5px;
+  border-radius: 5px;
+  color: #dcd7c9;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.options button .icon {
+  filter: invert(19%) sepia(9%) saturate(825%) hue-rotate(147deg)
+    brightness(90%) contrast(91%);
+}
+
+.switch {
+  background-color: #a27b5c;
+  -webkit-box-shadow: inset 0px 0px 3px 0px #000000;
+  box-shadow: inset 0px 0px 3px 0px #000000;
+}
+
+.delete {
+  background-color: #cd5c5c;
+  -webkit-box-shadow: inset 0px 0px 3px 0px #000000;
+  box-shadow: inset 0px 0px 3px 0px #000000;
+}
