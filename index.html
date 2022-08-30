@@ -21,37 +21,154 @@
         <img src="resources/icons/logo.svg" alt="" class="logo">
         <div class="library-stats flex">
             <h2>Library Statistics</h2>
-            <p class="grid">Total Books <span id="totalbooks">0</span></p>
-            <p class="grid">Read Books <span id="readbooks">0</span></p>
-            <p class="grid">Unread Books <span id="unreadbooks">0</span></p>
+            <p class="grid">Total Books <span id="total-books">0</span></p>
+            <p class="grid">Read Books <span id="read-books">0</span></p>
+            <p class="grid">Unread Books <span id="unread-books">0</span></p>
+            <p class="grid">Total Pages <span id="total-pages">0</span></p>
+            <p class="grid">Read Pages <span id="read-pages">0</span></p>
+            <p class="grid">Unread Pages <span id="unread-pages">0</span></p>
         </div>
-        <button id="newbook" class="flex"><img src="resources/icons/plus.svg" alt="" class="icon">New Book</button>
+        <button id="show-modal" class="flex"><img src="resources/icons/plus.svg" alt="" class="icon">New Book</button>
     </aside>
-    <main class="grid">
-        <header class="grid-header">
-            <div class="container grid">
-                <div class="search flex">
-                    <img src="resources/icons/search.svg" alt="" class="icon">
-                    <input type="text" id="search" placeholder="Search">
+    <main class="flex">
+        <div class="container grid">
+            <header class="grid-header">
+                <div class="container grid">
+                    <div class="search flex">
+                        <img src="resources/icons/search.svg" alt="" class="icon">
+                        <input type="text" id="search" placeholder="Search">
+                    </div>
+                    <ul class="data-headers grid">
+                        <li class="data-header">Title</li>
+                        <li class="data-header">Author</li>
+                        <li class="data-header">Page Count</li>
+                        <li class="data-header">Read Status</li>
+                        <li class="data-header">Publishing Date</li>
+                    </ul>
                 </div>
-                <ul class="data-headers grid">
-                    <li class="data-header">Title</li>
-                    <li class="data-header">Author</li>
-                    <li class="data-header">Page Count</li>
-                    <li class="data-header">Read Status</li>
-                    <li class="data-header">Publishing Date</li>
-                </ul>
-            </div>
-        </header>
-        <div class="content">
-            <div class="container grid">
-                <ul class="book grid">
-                    <li class="book-data">Default Book Title</p>
-                    <li class="book-data">Default Author</p>
-                    <li class="book-data">650</p>
-                    <li class="book-data">Read</p>
-                    <li class="book-data">11/23/2021</p>
-                </ul>
+            </header>
+            <div class="content">
+                <div class="container grid">
+                    <div class="book grid">
+                        <ul class="data-list grid">
+                            <li class="book-data title">Lorem, ipsum dolor.</p>
+                            <li class="book-data">Big Author</p>
+                            <li class="book-data">322</p>
+                            <li class="book-data">Read</p>
+                            <li class="book-data date">11/23/2021</p>
+                        </ul>
+                        <div class="options flex">
+                            <button class="option-button flex switch" type="button"><img
+                                    src="resources/icons/switch.svg" alt="" class="icon switch-read-button">Switch Read
+                                Status</button>
+                            <button class="option-button flex delete" type="button"><img
+                                    src="resources/icons/delete.svg" alt="" class="icon delete-button">Delete
+                                Book</button>
+                        </div>
+                    </div>
+                    <div class="book grid">
+                        <ul class="data-list grid">
+                            <li class="book-data title">Authoria Authoerson</p>
+                            <li class="book-data">Natura Bogg</p>
+                            <li class="book-data">684</p>
+                            <li class="book-data">Unread</p>
+                            <li class="book-data date">04/16/2018</p>
+                        </ul>
+                        <div class="options flex">
+                            <button class="option-button flex switch" type="button"><img
+                                    src="resources/icons/switch.svg" alt="" class="icon switch-read-button">Switch Read
+                                Status</button>
+                            <button class="option-button flex delete" type="button"><img
+                                    src="resources/icons/delete.svg" alt="" class="icon delete-button">Delete
+                                Book</button>
+                        </div>
+                    </div>
+                    <div class="book grid">
+                        <ul class="data-list grid">
+                            <li class="book-data title">One Grand Scene</p>
+                            <li class="book-data">Knotty Pines</p>
+                            <li class="book-data">120</p>
+                            <li class="book-data">Read</p>
+                            <li class="book-data date">08/14/1982</p>
+                        </ul>
+                        <div class="options flex">
+                            <button class="option-button flex switch" type="button"><img
+                                    src="resources/icons/switch.svg" alt="" class="icon switch-read-button">Switch Read
+                                Status</button>
+                            <button class="option-button flex delete" type="button"><img
+                                    src="resources/icons/delete.svg" alt="" class="icon delete-button">Delete
+                                Book</button>
+                        </div>
+                    </div>
+                    <div class="book grid">
+                        <ul class="data-list grid">
+                            <li class="book-data title">Major Title Envy</p>
+                            <li class="book-data">Lomb Boie</p>
+                            <li class="book-data">131</p>
+                            <li class="book-data">Unread</p>
+                            <li class="book-data date">01/01/2001</p>
+                        </ul>
+                        <div class="options flex">
+                            <button class="option-button flex switch" type="button"><img
+                                    src="resources/icons/switch.svg" alt="" class="icon switch-read-button">Switch Read
+                                Status</button>
+                            <button class="option-button flex delete" type="button"><img
+                                    src="resources/icons/delete.svg" alt="" class="icon delete-button">Delete
+                                Book</button>
+                        </div>
+                    </div>
+                    <div class="book grid">
+                        <ul class="data-list grid">
+                            <li class="book-data title">Retried Beans</p>
+                            <li class="book-data">Mou feater</p>
+                            <li class="book-data">1199</p>
+                            <li class="book-data">Read</p>
+                            <li class="book-data date">12/25/2007</p>
+                        </ul>
+                        <div class="options flex">
+                            <button class="option-button flex switch" type="button"><img
+                                    src="resources/icons/switch.svg" alt="" class="icon switch-read-button">Switch Read
+                                Status</button>
+                            <button class="option-button flex delete" type="button"><img
+                                    src="resources/icons/delete.svg" alt="" class="icon delete-button">Delete
+                                Book</button>
+                        </div>
+                    </div>
+                    <div class="book grid">
+                        <ul class="data-list grid">
+                            <li class="book-data title">The Dog Did It</p>
+                            <li class="book-data">Not The Dog</p>
+                            <li class="book-data">14</p>
+                            <li class="book-data">Unread</p>
+                            <li class="book-data date">12/30/2022</p>
+                        </ul>
+                        <div class="options flex">
+                            <button class="option-button flex switch" type="button"><img
+                                    src="resources/icons/switch.svg" alt="" class="icon switch-read-button">Switch Read
+                                Status</button>
+                            <button class="option-button flex delete" type="button"><img
+                                    src="resources/icons/delete.svg" alt="" class="icon delete-button">Delete
+                                Book</button>
+                        </div>
+                    </div>
+                    <div class="book grid">
+                        <ul class="data-list grid">
+                            <li class="book-data title">Human Blame</p>
+                            <li class="book-data">Doctor Philosophy</p>
+                            <li class="book-data">1337</p>
+                            <li class="book-data">Unread</p>
+                            <li class="book-data date">08/16/1582</p>
+                        </ul>
+                        <div class="options flex">
+                            <button class="option-button flex switch" type="button"><img
+                                    src="resources/icons/switch.svg" alt="" class="icon switch-read-button">Switch Read
+                                Status</button>
+                            <button class="option-button flex delete" type="button"><img
+                                    src="resources/icons/delete.svg" alt="" class="icon delete-button">Delete
+                                Book</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
