@@ -205,7 +205,7 @@ aside {
 .library-stats p span {
   padding: 10px;
   background-color: #3f4e4f;
-  border-radius: 5px;
+  border-radius: 0.3rem;
   -webkit-box-shadow: inset 0px 0px 2px 0px #000000;
   box-shadow: inset 0px 0px 2px 0px #000000;
   font-weight: 600;
@@ -237,7 +237,7 @@ main {
 
 main header {
   background-color: #2c3639;
-  border-radius: 5px 5px 0 0;
+  border-radius: 0.3rem 0.3rem 0 0;
   margin: 50px 50px 0;
   padding: 10px;
   border-bottom: 2px solid #a27b5c;
@@ -259,7 +259,7 @@ main header {
 .search input {
   font-size: 1rem;
   width: 30%;
-  border-radius: 10px;
+  border-radius: 0.7rem;
   border: none;
   padding: 0 10px;
   background-color: #3f4e4f;
@@ -284,7 +284,7 @@ main header {
   gap: 10px;
   border: 1px solid hsla(184, 11%, 28%, 0.5);
   border-top: none;
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 0.3rem 0.3rem;
 }
 
 .book {
@@ -329,7 +329,7 @@ main header {
   font-weight: 600;
   align-items: center;
   gap: 5px;
-  border-radius: 5px;
+  border-radius: 0.3rem;
   color: #dcd7c9;
   cursor: pointer;
   font-size: 0.8rem;
