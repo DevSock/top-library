@@ -148,9 +148,12 @@ table {
   padding: 10px;
 }
 
+html {
+  font-size: 0.9vmax;
+}
+
 body {
   font-family: "Roboto", sans-serif;
-  font-size: 16px;
   grid-template-columns: min-content 1fr;
   background-color: #eeeeee;
   height: 100vh;
@@ -288,6 +291,7 @@ main header {
   padding-bottom: 10px;
   border-bottom: 1px dotted hsla(184, 11%, 28%, 0.5);
   gap: 5px;
+  grid-template-rows: 2fr 1fr;
 }
 
 .book:last-child {
