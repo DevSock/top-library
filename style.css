@@ -338,6 +338,7 @@ main header {
 .options button .icon {
   filter: invert(19%) sepia(9%) saturate(825%) hue-rotate(147deg)
     brightness(90%) contrast(91%);
+  font-size: 1rem;
 }
 
 .switch {
