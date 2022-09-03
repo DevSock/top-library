@@ -271,7 +271,7 @@ main header {
 }
 
 .data-headers {
-  grid-template-columns: repeat(5, minmax(100px, 1fr));
+  grid-template-columns: repeat(5, minmax(50px, 1fr));
   font-weight: 500;
   gap: 25px;
 }
@@ -291,7 +291,7 @@ main header {
   padding-bottom: 10px;
   border-bottom: 1px dotted hsla(184, 11%, 28%, 0.5);
   gap: 5px;
-  grid-template-rows: 2fr 1fr;
+  grid-template-rows: 1fr auto;
 }
 
 .book:last-child {
@@ -299,7 +299,7 @@ main header {
 }
 
 .data-list {
-  grid-template-columns: repeat(5, minmax(100px, 1fr));
+  grid-template-columns: repeat(5, minmax(50px, 1fr));
   font-weight: 500;
   color: #2c3639;
   gap: 25px;
@@ -332,7 +332,7 @@ main header {
   border-radius: 0.3rem;
   color: #dcd7c9;
   cursor: pointer;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 .options button .icon {
