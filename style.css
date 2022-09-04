@@ -300,11 +300,11 @@ main header {
 }
 
 [data-book-unread] {
-  color: forestgreen;
+  color: gray;
 }
 
 [data-book-read] {
-  color: gray;
+  color: forestgreen;
 }
 
 [data-book-date] {
