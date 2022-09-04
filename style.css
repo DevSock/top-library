@@ -260,14 +260,14 @@ main header {
   font-size: 1rem;
   width: 30%;
   border-radius: 0.7rem;
-  border: none;
+  border: 1px solid #1d2425;
   padding: 0 10px;
   background-color: #3f4e4f;
   outline: none;
   color: #dcd7c9;
   font-weight: 600;
-  -webkit-box-shadow: inset 0px 0px 3px 0px #000000;
-  box-shadow: inset 0px 0px 3px 0px #000000;
+  -webkit-box-shadow: inset 0px 0px 3px -1px #000000;
+  box-shadow: inset 0px 0px 3px -1px #000000;
 }
 
 .data-headers {
