@@ -45,123 +45,20 @@
             </ul>
         </header>
         <div class="content grid">
-            <div class="book grid">
+            <div class="book grid" data-book-index="0">
                 <ul class="data-list grid">
-                    <li class="book-data flex" data-book-title>Lorem, ipsum dolor.</p>
-                    <li class="book-data flex" data-book-author>Big Author</p>
-                    <li class="book-data flex" data-book-pagecount>322</p>
-                    <li class="book-data flex" data-book-read>Read</p>
-                    <li class="book-data flex" data-book-date>11/23/2021</p>
+                    <li class="book-data book-title flex">Alice In Wonderland</li>
+                    <li class="book-data book-author flex">Lewis Carroll</li>
+                    <li class="book-data book-pagecount flex">52</li>
+                    <li class="book-data book-readstatus book-read grid">
+                        Read
+                        <input type="checkbox" id="switch1" checked class="checkbox-hidden"><label for="switch1"
+                            class="slider-background">Toggle Book Read Status</label>
+                    </li>
+                    <li class="book-data book-publishing flex">11/23/2021</li>
                 </ul>
-                <div class="options flex">
-                    <button class="option-button flex switch" type="button"><img src="resources/icons/switch.svg" alt=""
-                            class="icon switch-read-button">Switch Read
-                        Status</button>
-                    <button class="option-button flex delete" type="button"><img src="resources/icons/delete.svg" alt=""
-                            class="icon delete-button">Delete
-                        Book</button>
-                </div>
-            </div>
-            <div class="book grid">
-                <ul class="data-list grid">
-                    <li class="book-data flex" data-book-title>Authoria Authoerson</p>
-                    <li class="book-data flex" data-book-author>Natura Bogg</p>
-                    <li class="book-data flex" data-book-pagecount>684</p>
-                    <li class="book-data flex" data-book-unread>Unread</p>
-                    <li class="book-data flex" data-book-date>04/16/2018</p>
-                </ul>
-                <div class="options flex">
-                    <button class="option-button flex switch" type="button"><img src="resources/icons/switch.svg" alt=""
-                            class="icon switch-read-button">Switch Read
-                        Status</button>
-                    <button class="option-button flex delete" type="button"><img src="resources/icons/delete.svg" alt=""
-                            class="icon delete-button">Delete
-                        Book</button>
-                </div>
-            </div>
-            <div class="book grid">
-                <ul class="data-list grid">
-                    <li class="book-data flex" data-book-title>One Grand Scene</p>
-                    <li class="book-data flex" data-book-author>Knotty Pines</p>
-                    <li class="book-data flex" data-book-pagecount>120</p>
-                    <li class="book-data flex" data-book-read>Read</p>
-                    <li class="book-data flex" data-book-date>08/14/1982</p>
-                </ul>
-                <div class="options flex">
-                    <button class="option-button flex switch" type="button"><img src="resources/icons/switch.svg" alt=""
-                            class="icon switch-read-button">Switch Read
-                        Status</button>
-                    <button class="option-button flex delete" type="button"><img src="resources/icons/delete.svg" alt=""
-                            class="icon delete-button">Delete
-                        Book</button>
-                </div>
-            </div>
-            <div class="book grid">
-                <ul class="data-list grid">
-                    <li class="book-data flex" data-book-title>Major Title Envy</p>
-                    <li class="book-data flex" data-book-author>Lomb Boie</p>
-                    <li class="book-data flex" data-book-pagecount>131</p>
-                    <li class="book-data flex" data-book-unread>Unread</p>
-                    <li class="book-data flex" data-book-date>01/01/2001</p>
-                </ul>
-                <div class="options flex">
-                    <button class="option-button flex switch" type="button"><img src="resources/icons/switch.svg" alt=""
-                            class="icon switch-read-button">Switch Read
-                        Status</button>
-                    <button class="option-button flex delete" type="button"><img src="resources/icons/delete.svg" alt=""
-                            class="icon delete-button">Delete
-                        Book</button>
-                </div>
-            </div>
-            <div class="book grid">
-                <ul class="data-list grid">
-                    <li class="book-data flex" data-book-title>Retried Beans</p>
-                    <li class="book-data flex" data-book-author>Mou feater</p>
-                    <li class="book-data flex" data-book-pagecount>1199</p>
-                    <li class="book-data flex" data-book-read>Read</p>
-                    <li class="book-data flex" data-book-date>12/25/2007</p>
-                </ul>
-                <div class="options flex">
-                    <button class="option-button flex switch" type="button"><img src="resources/icons/switch.svg" alt=""
-                            class="icon switch-read-button">Switch Read
-                        Status</button>
-                    <button class="option-button flex delete" type="button"><img src="resources/icons/delete.svg" alt=""
-                            class="icon delete-button">Delete
-                        Book</button>
-                </div>
-            </div>
-            <div class="book grid">
-                <ul class="data-list grid">
-                    <li class="book-data flex" data-book-title>The Dog Did It</p>
-                    <li class="book-data flex" data-book-author>Not The Dog</p>
-                    <li class="book-data flex" data-book-pagecount>14</p>
-                    <li class="book-data flex" data-book-unread>Unread</p>
-                    <li class="book-data flex" data-book-date>12/30/2022</p>
-                </ul>
-                <div class="options flex">
-                    <button class="option-button flex switch" type="button"><img src="resources/icons/switch.svg" alt=""
-                            class="icon switch-read-button">Switch Read
-                        Status</button>
-                    <button class="option-button flex delete" type="button"><img src="resources/icons/delete.svg" alt=""
-                            class="icon delete-button">Delete
-                        Book</button>
-                </div>
-            </div>
-            <div class="book grid">
-                <ul class="data-list grid">
-                    <li class="book-data flex" data-book-title>Human Blame</p>
-                    <li class="book-data flex" data-book-author>Doctor Philosophy</p>
-                    <li class="book-data flex" data-book-pagecount>1337</p>
-                    <li class="book-data flex" data-book-unread>Unread</p>
-                    <li class="book-data flex" data-book-date>08/16/1582</p>
-                </ul>
-                <div class="options flex">
-                    <button class="option-button flex switch" type="button"><img src="resources/icons/switch.svg" alt=""
-                            class="icon switch-read-button">Switch Read
-                        Status</button>
-                    <button class="option-button flex delete" type="button"><img src="resources/icons/delete.svg" alt=""
-                            class="icon delete-button">Delete
-                        Book</button>
+                <div class="book-admin flex">
+                    <button class="book-delete flex"><img src="resources/icons/delete.svg" alt="" class="icon"></button>
                 </div>
             </div>
         </div>
