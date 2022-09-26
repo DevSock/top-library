@@ -18,6 +18,7 @@ function book(title, author, pagecount, publishdate, readstatus) {
 function addBookToList(book) {
   const clonedElement = createClonedElement(book);
   bookList.push(book);
+  updateLibraryStats();
   bookContainerElement.appendChild(clonedElement);
 }
 
@@ -112,6 +113,38 @@ function submitBook(event) {
 
   addBookToList(new book(title, author, pageCount, publishText, readStatus));
   closeModal();
+}
+
+function updateLibraryStats() {
+  const totalBooksElement = document.getElementById("total-books");
+  const totalReadElement = document.getElementById("read-books");
+  const totalUnreadElement = document.getElementById("unread-books");
+  const totalPagesElement = document.getElementById("total-pages");
+  const totalReadPagesElement = document.getElementById("read-pages");
+  const totalUnreadPagesElement = document.getElementById("unread-pages");
+  const totalBooks = bookList.length;
+  const totalRead = bookList.filter((book) => book.readstatus).length;
+  const totalUnread = bookList.filter((book) => !book.readstatus).length;
+  const totalPages = bookList.reduce((total, book) => {
+    return total + parseInt(book.pagecount);
+  }, 0);
+  const totalReadPages = bookList
+    .filter((book) => book.readstatus)
+    .reduce((total, book) => {
+      return total + parseInt(book.pagecount);
+    }, 0);
+  const totalUnreadPages = bookList
+    .filter((book) => !book.readstatus)
+    .reduce((total, book) => {
+      return total + parseInt(book.pagecount);
+    }, 0);
+
+  totalBooksElement.textContent = bookList.length;
+  totalReadElement.textContent = totalRead;
+  totalUnreadElement.textContent = totalUnread;
+  totalPagesElement.textContent = totalPages;
+  totalReadPagesElement.textContent = totalReadPages;
+  totalUnreadPagesElement.textContent = totalUnreadPages;
 }
 
 document.addEventListener("click", deleteBook);
