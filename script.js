@@ -3,6 +3,7 @@ const modalElement = document.getElementById("modal");
 const showModalButtonElement = document.getElementById("show-modal");
 const closeModalButtonElement = document.getElementById("close-modal");
 const bookContainerElement = document.getElementById("book-list");
+const newBookForm = document.forms["new-book-form"];
 let bookList = [];
 
 function book(title, author, pagecount, publishdate, readstatus) {
@@ -74,6 +75,7 @@ function showModal() {
 
 function closeModal() {
   modal.setAttribute("hidden", true);
+  newBookForm.reset();
 }
 
 function deleteBook(event) {
@@ -93,6 +95,26 @@ function deleteBook(event) {
   }
 }
 
+function submitBook(event) {
+  event.preventDefault();
+  const form = document.forms["new-book-form"];
+  const formData = new FormData(form);
+  const title = formData.get("title");
+  const author = formData.get("author");
+  const pageCount = formData.get("pagecount");
+  const publishDate = formData.get("publishdate");
+  const publishYear = publishDate.substring(0, publishDate.indexOf("-"));
+  const publishText = publishDate
+    .slice(publishDate.indexOf("-") + 1)
+    .concat(` / ${publishYear}`)
+    .replace("-", " / ");
+  const readStatus = formData.get("readstatus") ? true : false;
+
+  addBookToList(new book(title, author, pageCount, publishText, readStatus));
+  closeModal();
+}
+
 document.addEventListener("click", deleteBook);
 showModalButtonElement.addEventListener("click", showModal);
 closeModalButtonElement.addEventListener("click", closeModal);
+newBookForm.addEventListener("submit", submitBook);
