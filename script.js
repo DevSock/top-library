@@ -16,10 +16,9 @@ function book(title, author, pagecount, publishdate, readstatus) {
 }
 
 function addBookToList(book) {
-  const clonedElement = createClonedElement(book);
   bookList.push(book);
   updateLibraryStats();
-  bookContainerElement.appendChild(clonedElement);
+  bookContainerElement.appendChild(createClonedElement(book));
 }
 
 function createClonedElement(book) {
@@ -38,7 +37,6 @@ function createClonedElement(book) {
   const readStatusElement = cloneElement.querySelector(
     ".data-list .book-readstatus"
   );
-  const statusTextElement = readStatusElement.querySelector(".status-text");
   const hiddenCheckboxElement = readStatusElement.querySelector(
     "input[type=checkbox]"
   );
@@ -54,65 +52,12 @@ function createClonedElement(book) {
   pageCountElement.textContent = book.pagecount;
   publishDateElement.textContent = book.publishdate;
 
-  hiddenCheckboxElement.id = `${book.id}-checkbox`;
-  sliderBackgroundElement.setAttribute("for", `${book.id}-checkbox`);
+  hiddenCheckboxElement.setAttribute("id", `${book.id}:checkbox`);
+  sliderBackgroundElement.setAttribute("for", `${book.id}:checkbox`);
+  sliderBackgroundElement.setAttribute("id", `${book.id}:slider`);
 
-  if (book.readstatus) {
-    statusTextElement.textContent = "Read";
-    readStatusElement.classList.add("book-read");
-    hiddenCheckboxElement.checked = true;
-  } else {
-    statusTextElement.textContent = "Unread";
-    readStatusElement.classList.remove("book-read");
-    hiddenCheckboxElement.checked = false;
-  }
-
+  updateReadStatus(cloneElement, book.readstatus);
   return cloneElement;
-}
-
-function showModal() {
-  modal.removeAttribute("hidden");
-}
-
-function closeModal() {
-  modal.setAttribute("hidden", true);
-  newBookForm.reset();
-}
-
-function deleteBook(event) {
-  const currentTarget = event.currentTarget.activeElement;
-
-  if (currentTarget.classList.contains("book-delete")) {
-    const uuid = currentTarget.getAttribute("data-book-id");
-    const targetBook = document.getElementById(uuid);
-    const bookListEntry = bookList.find((entry) => {
-      if (entry.id == uuid) {
-        return entry;
-      }
-    });
-
-    targetBook.remove();
-    bookList.splice(bookList.indexOf(bookListEntry), 1);
-  }
-}
-
-function submitBook(event) {
-  event.preventDefault();
-  const form = document.forms["new-book-form"];
-  const formData = new FormData(form);
-  const title = formData.get("title");
-  const author = formData.get("author");
-  const pageCount = formData.get("pagecount");
-  const publishDate = formData.get("publishdate");
-  const publishYear = publishDate.substring(0, publishDate.indexOf("-"));
-  const publishText = publishDate
-    .slice(publishDate.indexOf("-") + 1)
-    .concat(` / ${publishYear}`)
-    .replace("-", " / ");
-  const readStatus = formData.get("readstatus") ? true : false;
-
-  addBookToList(new book(title, author, pageCount, publishText, readStatus));
-  closeModal();
 }
 
 function updateLibraryStats() {
@@ -122,7 +67,6 @@ function updateLibraryStats() {
   const totalPagesElement = document.getElementById("total-pages");
   const totalReadPagesElement = document.getElementById("read-pages");
   const totalUnreadPagesElement = document.getElementById("unread-pages");
-  const totalBooks = bookList.length;
   const totalRead = bookList.filter((book) => book.readstatus).length;
   const totalUnread = bookList.filter((book) => !book.readstatus).length;
   const totalPages = bookList.reduce((total, book) => {
@@ -147,7 +91,73 @@ function updateLibraryStats() {
   totalUnreadPagesElement.textContent = totalUnreadPages;
 }
 
-document.addEventListener("click", deleteBook);
+function showModal() {
+  modal.removeAttribute("hidden");
+}
+
+function closeModal() {
+  modal.setAttribute("hidden", true);
+  newBookForm.reset();
+}
+
+function handleClickOnBook(event) {
+  const target = event.target;
+  if (target.classList.contains("delete-icon")) {
+    const parent = target.parentElement;
+    const uuid = parent.getAttribute("data-book-id");
+    const targetBook = document.getElementById(uuid);
+    const bookListEntry = bookList.find((entry) => entry.id === uuid);
+
+    targetBook.remove();
+    bookList.splice(bookList.indexOf(bookListEntry), 1);
+  } else if (target.classList.contains("checkbox-hidden")) {
+    const uuid = target.getAttribute("id").split(":")[0];
+    const targetBook = document.getElementById(uuid);
+
+    updateReadStatus(targetBook, target.checked);
+  }
+}
+
+function submitBook(event) {
+  event.preventDefault();
+  const formData = new FormData(document.forms["new-book-form"]);
+  const title = formData.get("title");
+  const author = formData.get("author");
+  const pageCount = formData.get("pagecount");
+  const publishDate = formData.get("publishdate");
+  const publishYear = publishDate.substring(0, publishDate.indexOf("-"));
+  const publishText = publishDate
+    .slice(publishDate.indexOf("-") + 1)
+    .concat(` / ${publishYear}`)
+    .replace("-", " / ");
+  const readStatus = formData.get("readstatus") ? true : false;
+
+  addBookToList(new book(title, author, pageCount, publishText, readStatus));
+  closeModal();
+}
+
+function updateReadStatus(book, status) {
+  const bookListEntry = bookList.find((entry) => entry.id === book.id);
+  const readStatusElement = book.querySelector(".data-list .book-readstatus");
+  const hiddenCheckboxElement = readStatusElement.querySelector(
+    "input[type=checkbox]"
+  );
+  const statusTextElement = book.querySelector(".status-text");
+
+  if (status) {
+    statusTextElement.textContent = "Read";
+    statusTextElement.classList.add("book-read");
+    hiddenCheckboxElement.checked = true;
+    bookListEntry.readstatus = true;
+  } else {
+    statusTextElement.textContent = "Unread";
+    statusTextElement.classList.remove("book-read");
+    hiddenCheckboxElement.checked = false;
+    bookListEntry.readstatus = false;
+  }
+}
+
+bookContainerElement.addEventListener("click", handleClickOnBook);
 showModalButtonElement.addEventListener("click", showModal);
 closeModalButtonElement.addEventListener("click", closeModal);
 newBookForm.addEventListener("submit", submitBook);
