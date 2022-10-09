@@ -318,6 +318,10 @@ main header {
   color: gray;
 }
 
+.status-text {
+  transition: all 0.4s ease;
+}
+
 .book-read {
   color: forestgreen;
 }
