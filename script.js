@@ -4,6 +4,12 @@ const showModalButtonElement = document.getElementById("show-modal");
 const closeModalButtonElement = document.getElementById("close-modal");
 const bookContainerElement = document.getElementById("book-list");
 const newBookForm = document.forms["new-book-form"];
+const totalBooksElement = document.getElementById("total-books");
+const totalReadElement = document.getElementById("read-books");
+const totalUnreadElement = document.getElementById("unread-books");
+const totalPagesElement = document.getElementById("total-pages");
+const totalReadPagesElement = document.getElementById("read-pages");
+const totalUnreadPagesElement = document.getElementById("unread-pages");
 let bookList = [];
 
 function book(title, author, pagecount, publishdate, readstatus) {
@@ -61,12 +67,6 @@ function createClonedElement(book) {
 }
 
 function updateLibraryStats() {
-  const totalBooksElement = document.getElementById("total-books");
-  const totalReadElement = document.getElementById("read-books");
-  const totalUnreadElement = document.getElementById("unread-books");
-  const totalPagesElement = document.getElementById("total-pages");
-  const totalReadPagesElement = document.getElementById("read-pages");
-  const totalUnreadPagesElement = document.getElementById("unread-pages");
   const totalRead = bookList.filter((book) => book.readstatus).length;
   const totalUnread = bookList.filter((book) => !book.readstatus).length;
   const totalPages = bookList.reduce((total, book) => {
@@ -155,6 +155,7 @@ function updateReadStatus(book, status) {
     hiddenCheckboxElement.checked = false;
     bookListEntry.readstatus = false;
   }
+  updateLibraryStats();
 }
 
 bookContainerElement.addEventListener("click", handleClickOnBook);
