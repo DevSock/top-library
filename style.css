@@ -168,6 +168,56 @@ body {
 /* ### End of Global / Default Styles ### */
 /* ###################################### */
 
+/* ############################## */
+/* ### Custom Checkbox Slider ### */
+/* ############################## */
+.checkbox-hidden {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  grid-area: toggle;
+}
+
+.slider-background {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 2.5em;
+  height: 0.8em;
+  background: grey;
+  display: block;
+  border-radius: 1em;
+  position: relative;
+  grid-area: toggle;
+}
+
+.slider-background:after {
+  content: "";
+  position: absolute;
+  top: 0.1em;
+  left: 0.1em;
+  width: 1em;
+  height: 0.6em;
+  background: #2c3639ee;
+  border-radius: 1em;
+  transition: 0.3s;
+}
+
+.checkbox-hidden:checked + .slider-background {
+  background: forestgreen;
+}
+
+.checkbox-hidden:checked + .slider-background:after {
+  left: calc(100% - 0.15em);
+  transform: translateX(-100%);
+}
+
+.slider-background:active:after {
+  width: 1.3em;
+}
+/* ##################################### */
+/* ### End of Custom Checkbox Slider ### */
+/* ##################################### */
+
 /* ############################# */
 /* ### Fixed Sidebar Element ### */
 /* ############################# */
@@ -377,50 +427,6 @@ main header {
 .book-delete .icon {
   filter: invert(14%) sepia(52%) saturate(6933%) hue-rotate(1deg)
     brightness(86%) contrast(123%);
-}
-
-.checkbox-hidden {
-  height: 0;
-  width: 0;
-  visibility: hidden;
-  grid-area: toggle;
-}
-
-.slider-background {
-  cursor: pointer;
-  text-indent: -9999px;
-  width: 2.5em;
-  height: 0.8em;
-  background: grey;
-  display: block;
-  border-radius: 1em;
-  position: relative;
-  grid-area: toggle;
-}
-
-.slider-background:after {
-  content: "";
-  position: absolute;
-  top: 0.1em;
-  left: 0.1em;
-  width: 1em;
-  height: 0.6em;
-  background: #2c3639ee;
-  border-radius: 1em;
-  transition: 0.3s;
-}
-
-.checkbox-hidden:checked + .slider-background {
-  background: forestgreen;
-}
-
-.checkbox-hidden:checked + .slider-background:after {
-  left: calc(100% - 0.15em);
-  transform: translateX(-100%);
-}
-
-.slider-background:active:after {
-  width: 1.3em;
 }
 
 .modal {
