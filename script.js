@@ -110,6 +110,7 @@ function handleClickOnBook(event) {
 
     targetBook.remove();
     bookList.splice(bookList.indexOf(bookListEntry), 1);
+    updateLibraryStats();
   } else if (target.classList.contains("checkbox-hidden")) {
     const uuid = target.getAttribute("id").split(":")[0];
     const targetBook = document.getElementById(uuid);
