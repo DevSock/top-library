@@ -307,128 +307,9 @@ aside {
 /* ### End of Fixed Sidebar Element ### */
 /* #################################### */
 
-main {
-  height: 100vh;
-  grid-template-rows: auto 1fr;
-  gap: 10px;
-}
-
-main header {
-  background-color: #2c3639;
-  border-radius: 0.3rem 0.3rem 0 0;
-  margin: 50px 50px 0;
-  padding: 10px;
-  border-bottom: 2px solid #a27b5c;
-  gap: 10px;
-  color: #dcd7c9;
-}
-
-.search {
-  font-size: 1.2rem;
-  gap: 10px;
-  align-items: center;
-}
-
-.search .icon {
-  filter: invert(93%) sepia(16%) saturate(160%) hue-rotate(5deg) brightness(92%)
-    contrast(87%);
-}
-
-.search input {
-  font-size: 1rem;
-  width: 30%;
-  border-radius: 0.7rem;
-  border: 1px solid #1d2425;
-  padding: 0 10px;
-  background-color: #3f4e4f;
-  outline: none;
-  color: #dcd7c9;
-  font-weight: 600;
-  -webkit-box-shadow: inset 0px 0px 3px -1px #000000;
-  box-shadow: inset 0px 0px 3px -1px #000000;
-}
-
-.data-headers {
-  grid-template-columns: repeat(5, minmax(50px, 2fr));
-  font-weight: 500;
-  gap: 25px;
-  padding: 0.5em;
-}
-
-.content {
-  grid-auto-rows: minmax(min-content, 150px);
-  overflow: auto;
-  margin: 0 50px 50px;
-  padding: 0 10px;
-  gap: 10px;
-  border: 1px solid hsla(184, 11%, 28%, 0.5);
-  border-top: none;
-  border-radius: 0 0 0.3rem 0.3rem;
-}
-
-.book {
-  padding: 0.5em;
-  border-bottom: 1px dotted hsla(184, 11%, 28%, 0.5);
-  grid-template-rows: auto min-content;
-  gap: 5px;
-}
-
-.data-list {
-  grid-template-columns: repeat(5, minmax(50px, 2fr));
-  font-weight: 500;
-  color: #2c3639;
-  gap: 25px;
-}
-
-.book-data {
-  align-items: center;
-}
-
-.book-title {
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-
-.book-readstatus {
-  grid-template-columns: 1fr 3fr;
-  grid-template-areas: "status toggle";
-  gap: 0.5em;
-  color: gray;
-}
-
-.status-text {
-  transition: all 0.4s ease;
-}
-
-.book-read {
-  color: forestgreen;
-}
-
-.book-publishing {
-  font-style: italic;
-}
-
-.book-admin {
-  justify-content: end;
-}
-
-.book-delete {
-  font-size: 1.3rem;
-  font-weight: bold;
-  cursor: pointer;
-  align-items: center;
-  gap: 0.3em;
-  padding: 0.3em;
-  border-radius: 0.3em;
-  background: none;
-  border: none;
-}
-
-.book-delete .icon {
-  filter: invert(14%) sepia(52%) saturate(6933%) hue-rotate(1deg)
-    brightness(86%) contrast(123%);
-}
-
+/* ###################################### */
+/* ### Modal for Adding New Book Form ### */
+/* ###################################### */
 .modal {
   position: fixed;
   z-index: 1;
@@ -576,3 +457,134 @@ main header {
   filter: invert(85%) sepia(12%) saturate(217%) hue-rotate(7deg)
     brightness(104%) contrast(85%);
 }
+/* ############################################# */
+/* ### End of Modal for Adding New Book Form ### */
+/* ############################################# */
+
+/* #################### */
+/* ### Main Content ### */
+/* #################### */
+main {
+  height: 100vh;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+}
+
+main header {
+  background-color: #2c3639;
+  border-radius: 0.3rem 0.3rem 0 0;
+  margin: 50px 50px 0;
+  padding: 10px;
+  border-bottom: 2px solid #a27b5c;
+  gap: 10px;
+  color: #dcd7c9;
+}
+
+.search {
+  font-size: 1.2rem;
+  gap: 10px;
+  align-items: center;
+}
+
+.search .icon {
+  filter: invert(93%) sepia(16%) saturate(160%) hue-rotate(5deg) brightness(92%)
+    contrast(87%);
+}
+
+.search input {
+  font-size: 1rem;
+  width: 30%;
+  border-radius: 0.7rem;
+  border: 1px solid #1d2425;
+  padding: 0 10px;
+  background-color: #3f4e4f;
+  outline: none;
+  color: #dcd7c9;
+  font-weight: 600;
+  -webkit-box-shadow: inset 0px 0px 3px -1px #000000;
+  box-shadow: inset 0px 0px 3px -1px #000000;
+}
+
+.data-headers {
+  grid-template-columns: repeat(5, minmax(50px, 2fr));
+  font-weight: 500;
+  gap: 25px;
+  padding: 0.5em;
+}
+
+.content {
+  grid-auto-rows: minmax(min-content, 150px);
+  overflow: auto;
+  margin: 0 50px 50px;
+  padding: 0 10px;
+  gap: 10px;
+  border: 1px solid hsla(184, 11%, 28%, 0.5);
+  border-top: none;
+  border-radius: 0 0 0.3rem 0.3rem;
+}
+
+.book {
+  padding: 0.5em;
+  border-bottom: 1px dotted hsla(184, 11%, 28%, 0.5);
+  grid-template-rows: auto min-content;
+  gap: 5px;
+}
+
+.data-list {
+  grid-template-columns: repeat(5, minmax(50px, 2fr));
+  font-weight: 500;
+  color: #2c3639;
+  gap: 25px;
+}
+
+.book-data {
+  align-items: center;
+}
+
+.book-title {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.book-readstatus {
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas: "status toggle";
+  gap: 0.5em;
+  color: gray;
+}
+
+.status-text {
+  transition: all 0.4s ease;
+}
+
+.book-read {
+  color: forestgreen;
+}
+
+.book-publishing {
+  font-style: italic;
+}
+
+.book-admin {
+  justify-content: end;
+}
+
+.book-delete {
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.3em;
+  padding: 0.3em;
+  border-radius: 0.3em;
+  background: none;
+  border: none;
+}
+
+.book-delete .icon {
+  filter: invert(14%) sepia(52%) saturate(6933%) hue-rotate(1deg)
+    brightness(86%) contrast(123%);
+}
+/* ########################### */
+/* ### End of Main Content ### */
+/* ########################### */
